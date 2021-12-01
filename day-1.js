@@ -1,5 +1,7 @@
 import { getData } from "./api.js";
 
+// https://adventofcode.com/2021/day/1
+
 export default async function sonarSweep() {
   const data = await getData(2021, 1);
   const sonarDepths = data.trim().split("\n").map(Number);
