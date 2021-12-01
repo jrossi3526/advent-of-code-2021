@@ -1,9 +1,6 @@
-import fetch from "node-fetch";
+import { getData } from "./api.js";
 
-fetch("https://adventofcode.com/2021/day/1/input")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-
-export default function sonarSweep() {
-  console.log("hello, world!");
+export default async function sonarSweep() {
+  const data = await getData(2021, 1);
+  console.log("data:", data.trim().split("\n").map(Number));
 }
