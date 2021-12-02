@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import express from "express";
-import sonarSweep from "./day-1.js";
+import sonarSweep from "./advent/day-1.js";
 
 dotenv.config();
 

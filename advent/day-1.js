@@ -1,4 +1,4 @@
-import { getData } from "./api.js";
+import { getData } from "../api.js";
 
 // https://adventofcode.com/2021/day/1
 
