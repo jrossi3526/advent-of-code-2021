@@ -4,6 +4,7 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import express from "express";
 import sonarSweep from "./advent/day-1.js";
+import dive from "./advent/day-2.js";
 
 dotenv.config();
 
@@ -20,3 +21,4 @@ app.listen(process.env.PORT, () => {
 });
 
 sonarSweep();
+dive();
