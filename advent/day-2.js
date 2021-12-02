@@ -5,21 +5,23 @@ export default async function dive() {
   const directions = data
     .trim()
     .split("\n")
-    .map((y) => y.split(" "));
+    .map((y) => {
+      let [a, b] = y.split(" ");
+      return [a, Number(b)];
+    });
 
   let x, y;
   [x, y] = [0, 0];
-  directions.forEach((dir) => {
-    let movement = Number(dir[1]);
-    switch (dir[0]) {
+  directions.forEach(([direction, inc]) => {
+    switch (direction) {
       case "forward":
-        x += movement;
+        x += inc;
         return;
       case "up":
-        y -= movement;
+        y -= inc;
         return;
       case "down":
-        y += movement;
+        y += inc;
         return;
     }
   });
@@ -32,18 +34,17 @@ export default async function dive() {
   // Part 2
   let aim;
   [x, y, aim] = [0, 0, 0];
-  directions.forEach((dir) => {
-    let movement = Number(dir[1]);
-    switch (dir[0]) {
+  directions.forEach(([direction, inc]) => {
+    switch (direction) {
       case "forward":
-        x += movement;
-        y += aim * movement;
+        x += inc;
+        y += aim * inc;
         return;
       case "up":
-        aim -= movement;
+        aim -= inc;
         return;
       case "down":
-        aim += movement;
+        aim += inc;
         return;
     }
   });
